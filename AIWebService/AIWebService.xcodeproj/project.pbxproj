@@ -1,0 +1,536 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		012C6DBC17CBE730003C4AEF /* WSDLProxyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 012C6DBA17CBE730003C4AEF /* WSDLProxyTests.m */; };
+		012C6DC017CBE90E003C4AEF /* Hello.wsdl in Resources */ = {isa = PBXBuildFile; fileRef = 012C6DBF17CBE90E003C4AEF /* Hello.wsdl */; };
+		012EA04817CBB6DA00DFE6F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012EA04717CBB6DA00DFE6F1 /* Foundation.framework */; };
+		012EA04D17CBB6DA00DFE6F1 /* AIWebService.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 012EA04C17CBB6DA00DFE6F1 /* AIWebService.h */; };
+		012EA04F17CBB6DA00DFE6F1 /* AIWebService.m in Sources */ = {isa = PBXBuildFile; fileRef = 012EA04E17CBB6DA00DFE6F1 /* AIWebService.m */; };
+		012EA05717CBB6DB00DFE6F1 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012EA05617CBB6DB00DFE6F1 /* SenTestingKit.framework */; };
+		012EA05917CBB6DB00DFE6F1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012EA05817CBB6DB00DFE6F1 /* UIKit.framework */; };
+		012EA05A17CBB6DB00DFE6F1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 012EA04717CBB6DA00DFE6F1 /* Foundation.framework */; };
+		012EA05D17CBB6DB00DFE6F1 /* libAIWebService.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 012EA04417CBB6DA00DFE6F1 /* libAIWebService.a */; };
+		012EA06317CBB6DB00DFE6F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 012EA06117CBB6DB00DFE6F1 /* InfoPlist.strings */; };
+		012EA06617CBB6DB00DFE6F1 /* AIWebServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 012EA06517CBB6DB00DFE6F1 /* AIWebServiceTests.m */; };
+		012EA07117CBE18700DFE6F1 /* WSDLProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 012EA07017CBE18700DFE6F1 /* WSDLProxy.m */; };
+		F0007F8FB4E745A1B8622BA8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F796B0E551FC48398D2C1379 /* libPods.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		012EA05B17CBB6DB00DFE6F1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 012EA03C17CBB6DA00DFE6F1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 012EA04317CBB6DA00DFE6F1;
+			remoteInfo = AIWebService;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		012EA04217CBB6DA00DFE6F1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				012EA04D17CBB6DA00DFE6F1 /* AIWebService.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		012C6DBA17CBE730003C4AEF /* WSDLProxyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLProxyTests.m; sourceTree = "<group>"; };
+		012C6DBB17CBE730003C4AEF /* WSDLProxyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLProxyTests.h; sourceTree = "<group>"; };
+		012C6DBF17CBE90E003C4AEF /* Hello.wsdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hello.wsdl; sourceTree = "<group>"; };
+		012C6DC117CBF217003C4AEF /* WSDLProxy_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLProxy_Private.h; sourceTree = "<group>"; };
+		012C6DC317CBF9DB003C4AEF /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "../Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		012EA04417CBB6DA00DFE6F1 /* libAIWebService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAIWebService.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		012EA04717CBB6DA00DFE6F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		012EA04B17CBB6DA00DFE6F1 /* AIWebService-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AIWebService-Prefix.pch"; sourceTree = "<group>"; };
+		012EA04C17CBB6DA00DFE6F1 /* AIWebService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIWebService.h; sourceTree = "<group>"; };
+		012EA04E17CBB6DA00DFE6F1 /* AIWebService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIWebService.m; sourceTree = "<group>"; };
+		012EA05517CBB6DB00DFE6F1 /* AIWebServiceTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AIWebServiceTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		012EA05617CBB6DB00DFE6F1 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		012EA05817CBB6DB00DFE6F1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		012EA06017CBB6DB00DFE6F1 /* AIWebServiceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AIWebServiceTests-Info.plist"; sourceTree = "<group>"; };
+		012EA06217CBB6DB00DFE6F1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		012EA06417CBB6DB00DFE6F1 /* AIWebServiceTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AIWebServiceTests.h; sourceTree = "<group>"; };
+		012EA06517CBB6DB00DFE6F1 /* AIWebServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIWebServiceTests.m; sourceTree = "<group>"; };
+		012EA06F17CBE18700DFE6F1 /* WSDLProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLProxy.h; sourceTree = "<group>"; };
+		012EA07017CBE18700DFE6F1 /* WSDLProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLProxy.m; sourceTree = "<group>"; };
+		0867125D07C44A1596231B1D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		F796B0E551FC48398D2C1379 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		012EA04117CBB6DA00DFE6F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012EA04817CBB6DA00DFE6F1 /* Foundation.framework in Frameworks */,
+				F0007F8FB4E745A1B8622BA8 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		012EA05117CBB6DB00DFE6F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012EA05717CBB6DB00DFE6F1 /* SenTestingKit.framework in Frameworks */,
+				012EA05917CBB6DB00DFE6F1 /* UIKit.framework in Frameworks */,
+				012EA05A17CBB6DB00DFE6F1 /* Foundation.framework in Frameworks */,
+				012EA05D17CBB6DB00DFE6F1 /* libAIWebService.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		012EA03B17CBB6DA00DFE6F1 = {
+			isa = PBXGroup;
+			children = (
+				012EA04917CBB6DA00DFE6F1 /* AIWebService */,
+				012EA05E17CBB6DB00DFE6F1 /* AIWebServiceTests */,
+				012EA04617CBB6DA00DFE6F1 /* Frameworks */,
+				012EA04517CBB6DA00DFE6F1 /* Products */,
+				012C6DC317CBF9DB003C4AEF /* libPods.a */,
+				0867125D07C44A1596231B1D /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		012EA04517CBB6DA00DFE6F1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				012EA04417CBB6DA00DFE6F1 /* libAIWebService.a */,
+				012EA05517CBB6DB00DFE6F1 /* AIWebServiceTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		012EA04617CBB6DA00DFE6F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				012EA04717CBB6DA00DFE6F1 /* Foundation.framework */,
+				012EA05617CBB6DB00DFE6F1 /* SenTestingKit.framework */,
+				012EA05817CBB6DB00DFE6F1 /* UIKit.framework */,
+				F796B0E551FC48398D2C1379 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		012EA04917CBB6DA00DFE6F1 /* AIWebService */ = {
+			isa = PBXGroup;
+			children = (
+				012EA04A17CBB6DA00DFE6F1 /* Supporting Files */,
+				012EA04C17CBB6DA00DFE6F1 /* AIWebService.h */,
+				012EA04E17CBB6DA00DFE6F1 /* AIWebService.m */,
+				012EA06F17CBE18700DFE6F1 /* WSDLProxy.h */,
+				012C6DC117CBF217003C4AEF /* WSDLProxy_Private.h */,
+				012EA07017CBE18700DFE6F1 /* WSDLProxy.m */,
+			);
+			path = AIWebService;
+			sourceTree = "<group>";
+		};
+		012EA04A17CBB6DA00DFE6F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				012EA04B17CBB6DA00DFE6F1 /* AIWebService-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		012EA05E17CBB6DB00DFE6F1 /* AIWebServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				012C6DBA17CBE730003C4AEF /* WSDLProxyTests.m */,
+				012C6DBB17CBE730003C4AEF /* WSDLProxyTests.h */,
+				012EA06417CBB6DB00DFE6F1 /* AIWebServiceTests.h */,
+				012EA06517CBB6DB00DFE6F1 /* AIWebServiceTests.m */,
+				012EA05F17CBB6DB00DFE6F1 /* Supporting Files */,
+			);
+			path = AIWebServiceTests;
+			sourceTree = "<group>";
+		};
+		012EA05F17CBB6DB00DFE6F1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				012C6DBF17CBE90E003C4AEF /* Hello.wsdl */,
+				012EA06017CBB6DB00DFE6F1 /* AIWebServiceTests-Info.plist */,
+				012EA06117CBB6DB00DFE6F1 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		012EA04317CBB6DA00DFE6F1 /* AIWebService */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 012EA06917CBB6DB00DFE6F1 /* Build configuration list for PBXNativeTarget "AIWebService" */;
+			buildPhases = (
+				AF697103A1444981B1918F54 /* Check Pods Manifest.lock */,
+				012EA04017CBB6DA00DFE6F1 /* Sources */,
+				012EA04117CBB6DA00DFE6F1 /* Frameworks */,
+				012EA04217CBB6DA00DFE6F1 /* CopyFiles */,
+				4EF60B355227470F88522B24 /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AIWebService;
+			productName = AIWebService;
+			productReference = 012EA04417CBB6DA00DFE6F1 /* libAIWebService.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		012EA05417CBB6DB00DFE6F1 /* AIWebServiceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 012EA06C17CBB6DB00DFE6F1 /* Build configuration list for PBXNativeTarget "AIWebServiceTests" */;
+			buildPhases = (
+				012C6DC217CBF9A7003C4AEF /* Check Pods Manifest.lock */,
+				012EA05017CBB6DB00DFE6F1 /* Sources */,
+				012EA05117CBB6DB00DFE6F1 /* Frameworks */,
+				012EA05217CBB6DB00DFE6F1 /* Resources */,
+				012C6DC517CBFA0A003C4AEF /* Copy Pods Resources */,
+				012EA05317CBB6DB00DFE6F1 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				012EA05C17CBB6DB00DFE6F1 /* PBXTargetDependency */,
+			);
+			name = AIWebServiceTests;
+			productName = AIWebServiceTests;
+			productReference = 012EA05517CBB6DB00DFE6F1 /* AIWebServiceTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		012EA03C17CBB6DA00DFE6F1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Asim Ihsan";
+			};
+			buildConfigurationList = 012EA03F17CBB6DA00DFE6F1 /* Build configuration list for PBXProject "AIWebService" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 012EA03B17CBB6DA00DFE6F1;
+			productRefGroup = 012EA04517CBB6DA00DFE6F1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				012EA04317CBB6DA00DFE6F1 /* AIWebService */,
+				012EA05417CBB6DB00DFE6F1 /* AIWebServiceTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		012EA05217CBB6DB00DFE6F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012EA06317CBB6DB00DFE6F1 /* InfoPlist.strings in Resources */,
+				012C6DC017CBE90E003C4AEF /* Hello.wsdl in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		012C6DC217CBF9A7003C4AEF /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\ncat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\nexit 1\nfi\n";
+		};
+		012C6DC517CBFA0A003C4AEF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
+		};
+		012EA05317CBB6DB00DFE6F1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+		4EF60B355227470F88522B24 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/../Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AF697103A1444981B1918F54 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		012EA04017CBB6DA00DFE6F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012EA04F17CBB6DA00DFE6F1 /* AIWebService.m in Sources */,
+				012EA07117CBE18700DFE6F1 /* WSDLProxy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		012EA05017CBB6DB00DFE6F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				012EA06617CBB6DB00DFE6F1 /* AIWebServiceTests.m in Sources */,
+				012C6DBC17CBE730003C4AEF /* WSDLProxyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		012EA05C17CBB6DB00DFE6F1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 012EA04317CBB6DA00DFE6F1 /* AIWebService */;
+			targetProxy = 012EA05B17CBB6DB00DFE6F1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		012EA06117CBB6DB00DFE6F1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				012EA06217CBB6DB00DFE6F1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		012EA06717CBB6DB00DFE6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		012EA06817CBB6DB00DFE6F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		012EA06A17CBB6DB00DFE6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0867125D07C44A1596231B1D /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/AIWebService.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AIWebService/AIWebService-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		012EA06B17CBB6DB00DFE6F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0867125D07C44A1596231B1D /* Pods.xcconfig */;
+			buildSettings = {
+				DSTROOT = /tmp/AIWebService.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AIWebService/AIWebService-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		012EA06D17CBB6DB00DFE6F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0867125D07C44A1596231B1D /* Pods.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AIWebService/AIWebService-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/ASIHTTPRequest\"",
+					"\"${PODS_ROOT}/Headers/ConciseKit\"",
+					"\"${PODS_ROOT}/Headers/RaptureXML\"",
+					"\"${PODS_ROOT}/Headers/Reachability\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
+				INFOPLIST_FILE = "AIWebServiceTests/AIWebServiceTests-Info.plist";
+				PODS_ROOT = "${SRCROOT}/../Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		012EA06E17CBB6DB00DFE6F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0867125D07C44A1596231B1D /* Pods.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AIWebService/AIWebService-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"\"${PODS_ROOT}/Headers\"",
+					"\"${PODS_ROOT}/Headers/ASIHTTPRequest\"",
+					"\"${PODS_ROOT}/Headers/ConciseKit\"",
+					"\"${PODS_ROOT}/Headers/RaptureXML\"",
+					"\"${PODS_ROOT}/Headers/Reachability\"",
+					"$(SDKROOT)/usr/include/libxml2",
+				);
+				INFOPLIST_FILE = "AIWebServiceTests/AIWebServiceTests-Info.plist";
+				PODS_ROOT = "${SRCROOT}/../Pods";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		012EA03F17CBB6DA00DFE6F1 /* Build configuration list for PBXProject "AIWebService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				012EA06717CBB6DB00DFE6F1 /* Debug */,
+				012EA06817CBB6DB00DFE6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		012EA06917CBB6DB00DFE6F1 /* Build configuration list for PBXNativeTarget "AIWebService" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				012EA06A17CBB6DB00DFE6F1 /* Debug */,
+				012EA06B17CBB6DB00DFE6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		012EA06C17CBB6DB00DFE6F1 /* Build configuration list for PBXNativeTarget "AIWebServiceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				012EA06D17CBB6DB00DFE6F1 /* Debug */,
+				012EA06E17CBB6DB00DFE6F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 012EA03C17CBB6DA00DFE6F1 /* Project object */;
+}
