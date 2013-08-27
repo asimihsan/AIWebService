@@ -23,13 +23,16 @@
 //    limitations under the License.
 // =============================================================================
 
-#import "WSDLProxy.h"
-#import "WSDLProxy_Private.h"
 #import "ConciseKit/ConciseKit.h"
 
-static NSString *SOAP11NamespaceURI = @"http://schemas.xmlsoap.org/wsdl/soap/";
-static NSString *SOAP12NamespaceURI = @"http://schemas.xmlsoap.org/wsdl/soap12/";
-static NSString *WSDLNamespaceURI = @"http://schemas.xmlsoap.org/wsdl/";
+#import "WSDLProxy.h"
+#import "WSDLProxy_Private.h"
+#import "WSDLSchema.h"
+#import "WSDLElement.h"
+
+static NSString *soap11NamespaceUri = @"http://schemas.xmlsoap.org/wsdl/soap/";
+static NSString *soap12NamespaceUri = @"http://schemas.xmlsoap.org/wsdl/soap12/";
+static NSString *wsdlNamespaceUri = @"http://schemas.xmlsoap.org/wsdl/";
 
 @implementation WSDLProxy
 
@@ -47,6 +50,8 @@ static NSString *WSDLNamespaceURI = @"http://schemas.xmlsoap.org/wsdl/";
 - (void)initialize
 {
     self.namespaces = [[NSMutableDictionary alloc] init];
+    self.schemas = [[NSMutableDictionary alloc] init];
+    self.currentXMLNamespaceStack = [[NSMutableArray alloc] init];
     @autoreleasepool {
         self.xmlParser = [[NSXMLParser alloc]
                           initWithData:[self.sourceContents
@@ -58,9 +63,11 @@ static NSString *WSDLNamespaceURI = @"http://schemas.xmlsoap.org/wsdl/";
     }
 }
 
-#pragma mark - NSXXMLParserDelegate
+#pragma mark - NSXMLParserDelegate
 
-- (void)parser:(NSXMLParser *)parser didStartMappingPrefix:(NSString *)prefix toURI:(NSString *)namespaceURI
+-        (void)parser:(NSXMLParser *)parser
+didStartMappingPrefix:(NSString *)prefix
+                toURI:(NSString *)namespaceURI
 {
     if (prefix.length > 0)
         [self.namespaces $obj:namespaceURI for:prefix];
@@ -72,13 +79,80 @@ didStartElement:(NSString *)elementName
   qualifiedName:(NSString *)qName
      attributes:(NSDictionary *)attributeDict
 {
-    if ($eql(namespaceURI, WSDLNamespaceURI) &&
+    if ($eql(namespaceURI, wsdlNamespaceUri) &&
         $eql(elementName, @"definitions") &&
         [attributeDict objectForKey:@"targetNamespace"])
     {
         [self.namespaces $obj:[attributeDict objectForKey:@"targetNamespace"]
                           for:@"targetNamespace"];
-        return;
+    }
+    else if ($eql(namespaceURI, wsdlNamespaceUri) &&
+             $eql(elementName, @"types"))
+    {
+        [self.currentXMLNamespaceStack $push:wsdlNamespaceUri];
+    } // wsdl:types
+    else if ($eql([self.currentXMLNamespaceStack $last], wsdlNamespaceUri) &&
+             $eql(elementName, @"schema"))
+    {
+        NSString *namespace = [attributeDict $for:@"targetNamespace"];
+        self.currentSchema = [[WSDLSchema alloc] init:namespace
+                                           namespaces:self.namespaces];
+    } // wsdl:types -> schema
+    else if ($eql([self.currentXMLNamespaceStack $last], wsdlNamespaceUri) &&
+             $eql(elementName, @"element"))
+    {
+        NSString *name = [attributeDict $for:@"name"];
+        NSString *targetNamespace = self.currentSchema.targetNamespace;
+        if (self.currentElement)
+        {
+            NSString *minOccurs = [attributeDict $for:@"minOccurs"];
+            NSString *maxOccurs = [attributeDict $for:@"maxOccurs"];
+            NSString *type = [attributeDict $for:@"type"];
+            WSDLElement *element = [[WSDLElement alloc] init:name
+                                                        type:type
+                                                    minOccurs:minOccurs
+                                                    maxOccurs:maxOccurs
+                                             targetNamespace:targetNamespace
+                                                  namespaces:self.namespaces];
+            [self.currentElement.childElements $obj:element
+                                                for:element.name];
+        }
+        else
+        {
+            WSDLElement *element = [[WSDLElement alloc] init:name
+                                       targetNamespace:targetNamespace
+                                            namespaces:self.namespaces];
+            self.currentElement = element;
+        }
+    } // wsdl:types -> schema -> element
+}
+
+- (void)parser:(NSXMLParser *)parser
+ didEndElement:(NSString *)elementName
+  namespaceURI:(NSString *)namespaceURI
+ qualifiedName:(NSString *)qName
+{
+    if ($eql(namespaceURI, wsdlNamespaceUri) &&
+        $eql(elementName, @"types"))
+    {
+        [self.currentXMLNamespaceStack $pop];
+    }
+    else if ($eql([self.currentXMLNamespaceStack $last], wsdlNamespaceUri) &&
+             $eql(elementName, @"schema"))
+    {
+        [self.schemas $obj:self.currentSchema
+                       for:self.currentSchema.targetNamespace];
+        self.currentSchema = nil;
+    }
+    else if ($eql([self.currentXMLNamespaceStack $last], wsdlNamespaceUri) &&
+             $eql(elementName, @"element"))
+    {
+        if (self.currentElement && (!self.currentElement.type))
+        {
+            [self.currentSchema.elements $obj:self.currentElement
+                                          for:self.currentElement.name];
+            self.currentElement = nil;
+        }
     }
 }
 

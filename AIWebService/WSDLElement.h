@@ -1,7 +1,5 @@
 // =============================================================================
-//    WSDLProxy_Private.h
-//    Proxy requests from Objective-C to a web service using a Web Service
-//    Description Language (WSDL) file.
+//    WSDLElement.h
 //
 //    Project: AIWebService
 // =============================================================================
@@ -23,23 +21,29 @@
 //    limitations under the License.
 // =============================================================================
 
-#import "WSDLProxy.h"
+#import <Foundation/Foundation.h>
 
-@class WSDLSchema;
-@class WSDLElement;
+@interface WSDLElement : NSObject
 
-@interface WSDLProxy ()
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) Class type;
+@property (nonatomic, copy) NSString *typeNamespaceUri;
+@property (nonatomic, copy) NSString *minOccurs;
+@property (nonatomic, copy) NSString *maxOccurs;
+@property (nonatomic, retain) NSString *targetNamespace;
+@property (nonatomic, retain) NSDictionary *namespaces;
+@property (nonatomic, retain) NSMutableDictionary *childElements;
 
-@property (nonatomic, copy) NSString *sourceContents;
-@property (nonatomic, retain) NSMutableDictionary *namespaces;
-@property (nonatomic, retain) NSXMLParser *xmlParser;
-@property (nonatomic, assign) BOOL isValidXML;
-@property (nonatomic, retain) NSMutableArray *currentXMLNamespaceStack;
-@property (nonatomic, retain) NSMutableDictionary *schemas;
-@property (nonatomic, retain) WSDLSchema *currentSchema;
-@property (nonatomic, retain) WSDLElement *currentElement;
+-      (id)init:(NSString *)name
+targetNamespace:(NSString *)targetNamespace
+     namespaces:(NSDictionary *)namespaces;
 
-- (void)initialize;
+-      (id)init:(NSString *)name
+           type:(NSString *)type
+      minOccurs:(NSString *)minOccurs
+      maxOccurs:(NSString *)maxOccurs
+targetNamespace:(NSString *)targetNamespace
+     namespaces:(NSDictionary *)namespaces;
+
 
 @end
-
