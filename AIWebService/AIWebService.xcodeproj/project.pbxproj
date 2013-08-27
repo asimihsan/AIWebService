@@ -19,6 +19,10 @@
 		012EA06317CBB6DB00DFE6F1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 012EA06117CBB6DB00DFE6F1 /* InfoPlist.strings */; };
 		012EA06617CBB6DB00DFE6F1 /* AIWebServiceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 012EA06517CBB6DB00DFE6F1 /* AIWebServiceTests.m */; };
 		012EA07117CBE18700DFE6F1 /* WSDLProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 012EA07017CBE18700DFE6F1 /* WSDLProxy.m */; };
+		014EA60F17CC10AF00F4A3B7 /* ASPdotNET.wsdl in Resources */ = {isa = PBXBuildFile; fileRef = 014EA60E17CC10AF00F4A3B7 /* ASPdotNET.wsdl */; };
+		014EA61217CC434000F4A3B7 /* WSDLSOAPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 014EA61117CC434000F4A3B7 /* WSDLSOAPAddress.m */; };
+		014EA61517CC439000F4A3B7 /* WSDLPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 014EA61417CC439000F4A3B7 /* WSDLPort.m */; };
+		014EA61817CC447C00F4A3B7 /* WSDLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 014EA61717CC447C00F4A3B7 /* WSDLService.m */; };
 		F0007F8FB4E745A1B8622BA8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F796B0E551FC48398D2C1379 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +54,7 @@
 		012C6DBB17CBE730003C4AEF /* WSDLProxyTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLProxyTests.h; sourceTree = "<group>"; };
 		012C6DBF17CBE90E003C4AEF /* Hello.wsdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Hello.wsdl; sourceTree = "<group>"; };
 		012C6DC117CBF217003C4AEF /* WSDLProxy_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLProxy_Private.h; sourceTree = "<group>"; };
-		012C6DC317CBF9DB003C4AEF /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = file; name = libPods.a; path = "../Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
+		012C6DC317CBF9DB003C4AEF /* libPods.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libPods.a; path = "../Pods/build/Release-iphoneos/libPods.a"; sourceTree = "<group>"; };
 		012EA04417CBB6DA00DFE6F1 /* libAIWebService.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libAIWebService.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		012EA04717CBB6DA00DFE6F1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		012EA04B17CBB6DA00DFE6F1 /* AIWebService-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AIWebService-Prefix.pch"; sourceTree = "<group>"; };
@@ -65,6 +69,13 @@
 		012EA06517CBB6DB00DFE6F1 /* AIWebServiceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AIWebServiceTests.m; sourceTree = "<group>"; };
 		012EA06F17CBE18700DFE6F1 /* WSDLProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLProxy.h; sourceTree = "<group>"; };
 		012EA07017CBE18700DFE6F1 /* WSDLProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLProxy.m; sourceTree = "<group>"; };
+		014EA60E17CC10AF00F4A3B7 /* ASPdotNET.wsdl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = ASPdotNET.wsdl; sourceTree = "<group>"; };
+		014EA61017CC434000F4A3B7 /* WSDLSOAPAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLSOAPAddress.h; sourceTree = "<group>"; };
+		014EA61117CC434000F4A3B7 /* WSDLSOAPAddress.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLSOAPAddress.m; sourceTree = "<group>"; };
+		014EA61317CC439000F4A3B7 /* WSDLPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLPort.h; sourceTree = "<group>"; };
+		014EA61417CC439000F4A3B7 /* WSDLPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLPort.m; sourceTree = "<group>"; };
+		014EA61617CC447C00F4A3B7 /* WSDLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLService.h; sourceTree = "<group>"; };
+		014EA61717CC447C00F4A3B7 /* WSDLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLService.m; sourceTree = "<group>"; };
 		0867125D07C44A1596231B1D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F796B0E551FC48398D2C1379 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,6 +145,12 @@
 				012EA06F17CBE18700DFE6F1 /* WSDLProxy.h */,
 				012C6DC117CBF217003C4AEF /* WSDLProxy_Private.h */,
 				012EA07017CBE18700DFE6F1 /* WSDLProxy.m */,
+				014EA61017CC434000F4A3B7 /* WSDLSOAPAddress.h */,
+				014EA61117CC434000F4A3B7 /* WSDLSOAPAddress.m */,
+				014EA61317CC439000F4A3B7 /* WSDLPort.h */,
+				014EA61417CC439000F4A3B7 /* WSDLPort.m */,
+				014EA61617CC447C00F4A3B7 /* WSDLService.h */,
+				014EA61717CC447C00F4A3B7 /* WSDLService.m */,
 			);
 			path = AIWebService;
 			sourceTree = "<group>";
@@ -161,6 +178,7 @@
 		012EA05F17CBB6DB00DFE6F1 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				014EA60E17CC10AF00F4A3B7 /* ASPdotNET.wsdl */,
 				012C6DBF17CBE90E003C4AEF /* Hello.wsdl */,
 				012EA06017CBB6DB00DFE6F1 /* AIWebServiceTests-Info.plist */,
 				012EA06117CBB6DB00DFE6F1 /* InfoPlist.strings */,
@@ -245,6 +263,7 @@
 			files = (
 				012EA06317CBB6DB00DFE6F1 /* InfoPlist.strings in Resources */,
 				012C6DC017CBE90E003C4AEF /* Hello.wsdl in Resources */,
+				014EA60F17CC10AF00F4A3B7 /* ASPdotNET.wsdl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +350,9 @@
 			files = (
 				012EA04F17CBB6DA00DFE6F1 /* AIWebService.m in Sources */,
 				012EA07117CBE18700DFE6F1 /* WSDLProxy.m in Sources */,
+				014EA61217CC434000F4A3B7 /* WSDLSOAPAddress.m in Sources */,
+				014EA61517CC439000F4A3B7 /* WSDLPort.m in Sources */,
+				014EA61817CC447C00F4A3B7 /* WSDLService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
