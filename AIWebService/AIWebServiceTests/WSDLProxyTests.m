@@ -24,6 +24,7 @@
 #import "WSDLProxyTests.h"
 #import "WSDLProxy.h"
 #import "WSDLProxy_Private.h"
+#import "WSDLSchema.h"
 #import "ConciseKit/ConciseKit.h"
 
 @interface WSDLProxyTests ()
@@ -118,5 +119,15 @@
                  @"aspDotNet.namespaces not as expected: %@",
                  aspDotNet.namespaces);
 }
-    
+
+#pragma mark - testSchema
+
+- (void)testHelloWSDLSchema
+{
+    WSDLProxy *helloWSDLProxy = [[WSDLProxy alloc] initWithString:self.helloWSDLContents];
+    NSString *targetNamespace = @"http://ai.com";
+    WSDLSchema *schema = [helloWSDLProxy.schemas $for:targetNamespace];
+    STAssertNotNil(schema, @"Couldn't find main schema");
+}
+
 @end

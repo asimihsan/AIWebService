@@ -23,6 +23,8 @@
 		014EA61217CC434000F4A3B7 /* WSDLSOAPAddress.m in Sources */ = {isa = PBXBuildFile; fileRef = 014EA61117CC434000F4A3B7 /* WSDLSOAPAddress.m */; };
 		014EA61517CC439000F4A3B7 /* WSDLPort.m in Sources */ = {isa = PBXBuildFile; fileRef = 014EA61417CC439000F4A3B7 /* WSDLPort.m */; };
 		014EA61817CC447C00F4A3B7 /* WSDLService.m in Sources */ = {isa = PBXBuildFile; fileRef = 014EA61717CC447C00F4A3B7 /* WSDLService.m */; };
+		014EA61B17CD055A00F4A3B7 /* WSDLSchema.m in Sources */ = {isa = PBXBuildFile; fileRef = 014EA61A17CD055A00F4A3B7 /* WSDLSchema.m */; };
+		014EA61E17CD084800F4A3B7 /* WSDLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 014EA61D17CD084800F4A3B7 /* WSDLElement.m */; };
 		F0007F8FB4E745A1B8622BA8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F796B0E551FC48398D2C1379 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -76,6 +78,10 @@
 		014EA61417CC439000F4A3B7 /* WSDLPort.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLPort.m; sourceTree = "<group>"; };
 		014EA61617CC447C00F4A3B7 /* WSDLService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLService.h; sourceTree = "<group>"; };
 		014EA61717CC447C00F4A3B7 /* WSDLService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLService.m; sourceTree = "<group>"; };
+		014EA61917CD055A00F4A3B7 /* WSDLSchema.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSDLSchema.h; sourceTree = "<group>"; };
+		014EA61A17CD055A00F4A3B7 /* WSDLSchema.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSDLSchema.m; sourceTree = "<group>"; };
+		014EA61C17CD084800F4A3B7 /* WSDLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WSDLElement.h; path = ../WSDLElement.h; sourceTree = "<group>"; };
+		014EA61D17CD084800F4A3B7 /* WSDLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WSDLElement.m; path = ../WSDLElement.m; sourceTree = "<group>"; };
 		0867125D07C44A1596231B1D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = ../Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		F796B0E551FC48398D2C1379 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -139,18 +145,13 @@
 		012EA04917CBB6DA00DFE6F1 /* AIWebService */ = {
 			isa = PBXGroup;
 			children = (
+				014EA61F17CD088B00F4A3B7 /* XML DOM */,
 				012EA04A17CBB6DA00DFE6F1 /* Supporting Files */,
 				012EA04C17CBB6DA00DFE6F1 /* AIWebService.h */,
 				012EA04E17CBB6DA00DFE6F1 /* AIWebService.m */,
 				012EA06F17CBE18700DFE6F1 /* WSDLProxy.h */,
 				012C6DC117CBF217003C4AEF /* WSDLProxy_Private.h */,
 				012EA07017CBE18700DFE6F1 /* WSDLProxy.m */,
-				014EA61017CC434000F4A3B7 /* WSDLSOAPAddress.h */,
-				014EA61117CC434000F4A3B7 /* WSDLSOAPAddress.m */,
-				014EA61317CC439000F4A3B7 /* WSDLPort.h */,
-				014EA61417CC439000F4A3B7 /* WSDLPort.m */,
-				014EA61617CC447C00F4A3B7 /* WSDLService.h */,
-				014EA61717CC447C00F4A3B7 /* WSDLService.m */,
 			);
 			path = AIWebService;
 			sourceTree = "<group>";
@@ -184,6 +185,23 @@
 				012EA06117CBB6DB00DFE6F1 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		014EA61F17CD088B00F4A3B7 /* XML DOM */ = {
+			isa = PBXGroup;
+			children = (
+				014EA61C17CD084800F4A3B7 /* WSDLElement.h */,
+				014EA61D17CD084800F4A3B7 /* WSDLElement.m */,
+				014EA61017CC434000F4A3B7 /* WSDLSOAPAddress.h */,
+				014EA61117CC434000F4A3B7 /* WSDLSOAPAddress.m */,
+				014EA61317CC439000F4A3B7 /* WSDLPort.h */,
+				014EA61417CC439000F4A3B7 /* WSDLPort.m */,
+				014EA61617CC447C00F4A3B7 /* WSDLService.h */,
+				014EA61717CC447C00F4A3B7 /* WSDLService.m */,
+				014EA61917CD055A00F4A3B7 /* WSDLSchema.h */,
+				014EA61A17CD055A00F4A3B7 /* WSDLSchema.m */,
+			);
+			name = "XML DOM";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -353,6 +371,8 @@
 				014EA61217CC434000F4A3B7 /* WSDLSOAPAddress.m in Sources */,
 				014EA61517CC439000F4A3B7 /* WSDLPort.m in Sources */,
 				014EA61817CC447C00F4A3B7 /* WSDLService.m in Sources */,
+				014EA61B17CD055A00F4A3B7 /* WSDLSchema.m in Sources */,
+				014EA61E17CD084800F4A3B7 /* WSDLElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
