@@ -24,10 +24,16 @@
 #import "WSDLProxyTests.h"
 #import "WSDLProxy.h"
 #import "WSDLProxy_Private.h"
+#import "ConciseKit/ConciseKit.h"
 
 @interface WSDLProxyTests ()
 
 @property (nonatomic, copy) NSString *helloWSDLContents;
+@property (nonatomic, copy) NSString *aspDotNetContents;
+
+- (NSString *)getFile:(NSString *)filename type:(NSString *)type;
+
+- (void)_testLoadFromString:(WSDLProxy *)wsdlProxy;
 
 @end
 
@@ -35,13 +41,20 @@
 
 #pragma mark - Public methods
 
+- (NSString *)getFile:(NSString *)filename type:(NSString *)type
+{
+    NSString *path = [[NSBundle bundleForClass:[self class]]
+                                          pathForResource:filename ofType:type];
+    return [NSString stringWithContentsOfFile:path
+                                     encoding:NSUTF8StringEncoding
+                                        error:nil];
+}
+
+
 - (void)setUp
 {
-    NSString *helloFilePath = [[NSBundle bundleForClass:[self class]]
-                               pathForResource:@"Hello" ofType:@"wsdl"];
-    self.helloWSDLContents = [NSString stringWithContentsOfFile:helloFilePath
-                                                       encoding:NSUTF8StringEncoding
-                                                          error:nil];
+    self.helloWSDLContents = [self getFile:@"Hello" type:@"wsdl"];
+    self.aspDotNetContents = [self getFile:@"ASPdotNET" type:@"wsdl"];
     [super setUp];
 }
 
@@ -51,10 +64,59 @@
     [super tearDown];
 }
 
-- (void)testLoadFromString
+#pragma mark - testLoadFromString
+
+- (void)_testLoadFromString:(WSDLProxy *)wsdlProxy
 {
-    WSDLProxy *helloWSDLProxy = [[WSDLProxy alloc] initWithString:self.helloWSDLContents];
-    STAssertNotNil(helloWSDLProxy, @"Could not create WSDLProxy instance.");
+    STAssertNotNil(wsdlProxy, @"Could not create WSDLProxy instance.");
+    STAssertTrue(wsdlProxy.isValidXML, @"Valid XML is marked invalid.");
 }
 
+- (void)testHelloWSDLLoadFromString
+{
+    WSDLProxy *helloWSDLProxy = [[WSDLProxy alloc] initWithString:self.helloWSDLContents];
+    [self _testLoadFromString:helloWSDLProxy];
+}
+
+- (void)testAspDotNetLoadFromString
+{
+    WSDLProxy *aspDotNetProxy = [[WSDLProxy alloc] initWithString:self.aspDotNetContents];
+    [self _testLoadFromString:aspDotNetProxy];
+}
+
+#pragma mark - testNamespaces
+
+- (void)testHelloWSDLNamespaces
+{
+    WSDLProxy *helloWSDLProxy = [[WSDLProxy alloc] initWithString:self.helloWSDLContents];
+    NSDictionary *expectedNamespaces = $dict(@"http://schemas.xmlsoap.org/wsdl/soap/", @"wsdlsoap",
+                                             @"http://xml.apache.org/xml-soap", @"apachesoap",
+                                             @"http://ai.com", @"impl",
+                                             @"http://schemas.xmlsoap.org/wsdl/", @"wsdl",
+                                             @"http://www.w3.org/2001/XMLSchema", @"xsd",
+                                             @"http://ai.com", @"intf",
+                                             @"http://ai.com", @"targetNamespace");
+    STAssertTrue($eql(helloWSDLProxy.namespaces, expectedNamespaces),
+                 @"HelloWSDLProxy.namespaces not as expected: %@",
+                 helloWSDLProxy.namespaces);
+}
+
+- (void)testAspDotNetNamespaces
+{
+    WSDLProxy *aspDotNet = [[WSDLProxy alloc] initWithString:self.aspDotNetContents];
+    NSDictionary *expectedNamespaces = $dict(@"http://schemas.xmlsoap.org/wsdl/http/", @"http",
+                                             @"http://schemas.xmlsoap.org/wsdl/mime/", @"mime",
+                                             @"http://www.w3.org/2001/XMLSchema", @"s",
+                                             @"http://schemas.xmlsoap.org/wsdl/soap/", @"soap",
+                                             @"http://schemas.xmlsoap.org/wsdl/soap12/", @"soap12",
+                                             @"http://schemas.xmlsoap.org/soap/encoding/", @"soapenc",
+                                             @"http://foobar.com/", @"targetNamespace",
+                                             @"http://microsoft.com/wsdl/mime/textMatching/", @"tm",
+                                             @"http://foobar.com/", @"tns",
+                                             @"http://schemas.xmlsoap.org/wsdl/", @"wsdl");
+    STAssertTrue($eql(aspDotNet.namespaces, expectedNamespaces),
+                 @"aspDotNet.namespaces not as expected: %@",
+                 aspDotNet.namespaces);
+}
+    
 @end

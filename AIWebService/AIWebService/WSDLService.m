@@ -1,7 +1,5 @@
 // =============================================================================
-//    WSDLProxy_Private.h
-//    Proxy requests from Objective-C to a web service using a Web Service
-//    Description Language (WSDL) file.
+//    WSDLService.m
 //
 //    Project: AIWebService
 // =============================================================================
@@ -23,16 +21,19 @@
 //    limitations under the License.
 // =============================================================================
 
-#import "WSDLProxy.h"
+#import "WSDLService.h"
+#import "WSDLPort.h"
 
-@interface WSDLProxy ()
+@implementation WSDLService
 
-@property (nonatomic, copy) NSString *sourceContents;
-@property (nonatomic, retain) NSMutableDictionary *namespaces;
-@property (nonatomic, retain) NSXMLParser *xmlParser;
-@property (nonatomic, assign) BOOL isValidXML;
-
-- (void)initialize;
+-  (id)init:(NSString *)name
+       port:(WSDLPort *)port
+{
+    if (!(self = [super init]))
+        return nil;
+    self.name = name;
+    self.port = port;
+    return self;
+}
 
 @end
-

@@ -25,6 +25,11 @@
 
 #import "WSDLProxy.h"
 #import "WSDLProxy_Private.h"
+#import "ConciseKit/ConciseKit.h"
+
+static NSString *SOAP11NamespaceURI = @"http://schemas.xmlsoap.org/wsdl/soap/";
+static NSString *SOAP12NamespaceURI = @"http://schemas.xmlsoap.org/wsdl/soap12/";
+static NSString *WSDLNamespaceURI = @"http://schemas.xmlsoap.org/wsdl/";
 
 @implementation WSDLProxy
 
@@ -41,13 +46,40 @@
 
 - (void)initialize
 {
-    self.xmlParser = [[NSXMLParser alloc] initWithData:[self.sourceContents
+    self.namespaces = [[NSMutableDictionary alloc] init];
+    @autoreleasepool {
+        self.xmlParser = [[NSXMLParser alloc]
+                          initWithData:[self.sourceContents
                                        dataUsingEncoding:NSUTF8StringEncoding]];
-    [self.xmlParser setDelegate:self];
-    [self.xmlParser setShouldProcessNamespaces:YES];
-    [self.xmlParser setShouldReportNamespacePrefixes:YES];
-    [self.xmlParser setShouldResolveExternalEntities:YES];
-    self.isValidXML = [self.xmlParser parse];
+        [self.xmlParser setDelegate:self];
+        [self.xmlParser setShouldProcessNamespaces:YES];
+        [self.xmlParser setShouldReportNamespacePrefixes:YES];
+        self.isValidXML = [self.xmlParser parse];
+    }
+}
+
+#pragma mark - NSXXMLParserDelegate
+
+- (void)parser:(NSXMLParser *)parser didStartMappingPrefix:(NSString *)prefix toURI:(NSString *)namespaceURI
+{
+    if (prefix.length > 0)
+        [self.namespaces $obj:namespaceURI for:prefix];
+}
+
+-  (void)parser:(NSXMLParser *)parser
+didStartElement:(NSString *)elementName
+   namespaceURI:(NSString *)namespaceURI
+  qualifiedName:(NSString *)qName
+     attributes:(NSDictionary *)attributeDict
+{
+    if ($eql(namespaceURI, WSDLNamespaceURI) &&
+        $eql(elementName, @"definitions") &&
+        [attributeDict objectForKey:@"targetNamespace"])
+    {
+        [self.namespaces $obj:[attributeDict objectForKey:@"targetNamespace"]
+                          for:@"targetNamespace"];
+        return;
+    }
 }
 
 @end
